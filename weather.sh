@@ -17,11 +17,11 @@ checkcURL(){
 
 if [ $# -ge 1 ]; then
 	city=$(echo "$@" | sed 's/ /%20/g')
-	curl 15s -s "https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$APIKEY" > .tempCity
+	curl 10s -s "https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$APIKEY" > .tempCity
 	checkcURL
 else
 	dateTime=`date "+%A %B %d, %Y. %I:%M %p"`
-	ipInfo=$(curl 15s -s ipinfo.io)
+	ipInfo=$(curl 10s -s ipinfo.io)
 	checkcURL
 	city=$(echo "$ipInfo" | jq -r '.city')
 	state=$(echo "$ipInfo" | jq -r '.region')
@@ -29,7 +29,7 @@ else
 	lat=$(echo "$ipInfo" | jq -r '.loc' | sed 's/,/ /g' | awk '{print $1}')
 	lon=$(echo "$ipInfo" | jq -r '.loc' | sed 's/,/ /g' | awk '{print $2}')
 	flag=1
-	curl 15s -s "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$APIKEY" > .tempCity
+	curl 10s -s "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$APIKEY" > .tempCity
 	checkcURL
 fi
 
