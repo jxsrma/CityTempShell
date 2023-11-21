@@ -39,7 +39,7 @@ declare -A icons
 icons["11d"]="⛈️"  # Thunderstorm
 icons["09d"]="🌧️"  # Rain
 icons["10d"]="🌦️"  # Showers
-icons["13d"]="❄️"   # Snow
+icons["13d"]="❄️"  # Snow
 icons["09d"]="🌧️"  # Rain
 icons["50d"]="🌫️"  # Mist
 icons["01d"]="☀️"  # Clear Sky - Day
